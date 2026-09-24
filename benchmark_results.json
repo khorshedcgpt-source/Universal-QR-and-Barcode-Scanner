@@ -1,0 +1,590 @@
+[
+  {
+    "testId": "TC-EAN8",
+    "format": "EAN-8",
+    "condition": "Normal",
+    "expectedPayload": "96385074",
+    "js": {
+      "detected": true,
+      "decoded": true,
+      "actualFormat": "EAN_8",
+      "actualPayload": "96385074",
+      "payloadCorrect": true,
+      "falsePositive": false,
+      "latencyMs": 11,
+      "status": "PASS",
+      "notes": "Exact byte match (EAN_8)"
+    },
+    "wasm": {
+      "detected": true,
+      "decoded": true,
+      "actualFormat": "EAN8",
+      "actualPayload": "96385074",
+      "payloadCorrect": true,
+      "falsePositive": false,
+      "latencyMs": 1296,
+      "status": "PASS",
+      "notes": "Exact byte match (EAN8)"
+    }
+  },
+  {
+    "testId": "TC-EAN13",
+    "format": "EAN-13",
+    "condition": "Normal",
+    "expectedPayload": "5901234123457",
+    "js": {
+      "detected": true,
+      "decoded": true,
+      "actualFormat": "EAN_13",
+      "actualPayload": "5901234123457",
+      "payloadCorrect": true,
+      "falsePositive": false,
+      "latencyMs": 10,
+      "status": "PASS",
+      "notes": "Exact byte match (EAN_13)"
+    },
+    "wasm": {
+      "detected": true,
+      "decoded": true,
+      "actualFormat": "EAN13",
+      "actualPayload": "5901234123457",
+      "payloadCorrect": true,
+      "falsePositive": false,
+      "latencyMs": 17,
+      "status": "PASS",
+      "notes": "Exact byte match (EAN13)"
+    }
+  },
+  {
+    "testId": "TC-UPCA",
+    "format": "UPC-A",
+    "condition": "Normal",
+    "expectedPayload": "012345678905",
+    "js": {
+      "detected": true,
+      "decoded": true,
+      "actualFormat": "UPC_A",
+      "actualPayload": "012345678905",
+      "payloadCorrect": true,
+      "falsePositive": false,
+      "latencyMs": 2,
+      "status": "PASS",
+      "notes": "Exact byte match (UPC_A)"
+    },
+    "wasm": {
+      "detected": true,
+      "decoded": true,
+      "actualFormat": "EAN13",
+      "actualPayload": "0012345678905",
+      "payloadCorrect": true,
+      "falsePositive": false,
+      "latencyMs": 17,
+      "status": "PASS",
+      "notes": "Decoded normalized standard EAN13 (\"0012345678905\"); original non-expanded payload available in extra: \"012345678905\""
+    }
+  },
+  {
+    "testId": "TC-UPCE",
+    "format": "UPC-E",
+    "condition": "Normal",
+    "expectedPayload": "01234565",
+    "js": {
+      "detected": false,
+      "decoded": false,
+      "actualFormat": "",
+      "actualPayload": "",
+      "payloadCorrect": false,
+      "falsePositive": false,
+      "latencyMs": 215,
+      "status": "FAIL",
+      "notes": "No MultiFormat Readers were able to detect the code."
+    },
+    "wasm": {
+      "detected": true,
+      "decoded": true,
+      "actualFormat": "UPCE",
+      "actualPayload": "0012345000065",
+      "payloadCorrect": true,
+      "falsePositive": false,
+      "latencyMs": 99,
+      "status": "PASS",
+      "notes": "Decoded normalized standard UPCE (\"0012345000065\"); original non-expanded payload available in extra: \"01234565\""
+    }
+  },
+  {
+    "testId": "TC-CODE39",
+    "format": "Code 39",
+    "condition": "Normal",
+    "expectedPayload": "TEST39",
+    "js": {
+      "detected": true,
+      "decoded": true,
+      "actualFormat": "CODE_39",
+      "actualPayload": "TEST39",
+      "payloadCorrect": true,
+      "falsePositive": false,
+      "latencyMs": 2,
+      "status": "PASS",
+      "notes": "Exact byte match (CODE_39)"
+    },
+    "wasm": {
+      "detected": true,
+      "decoded": true,
+      "actualFormat": "Code39",
+      "actualPayload": "TEST39",
+      "payloadCorrect": true,
+      "falsePositive": false,
+      "latencyMs": 91,
+      "status": "PASS",
+      "notes": "Exact byte match (Code39)"
+    }
+  },
+  {
+    "testId": "TC-CODE93",
+    "format": "Code 93",
+    "condition": "Normal (with check characters)",
+    "expectedPayload": "CODE93",
+    "js": {
+      "detected": true,
+      "decoded": true,
+      "actualFormat": "CODE_93",
+      "actualPayload": "CODE93",
+      "payloadCorrect": true,
+      "falsePositive": false,
+      "latencyMs": 4,
+      "status": "PASS",
+      "notes": "Exact byte match (CODE_93)"
+    },
+    "wasm": {
+      "detected": true,
+      "decoded": true,
+      "actualFormat": "Code93",
+      "actualPayload": "CODE93",
+      "payloadCorrect": true,
+      "falsePositive": false,
+      "latencyMs": 74,
+      "status": "PASS",
+      "notes": "Exact byte match (Code93)"
+    }
+  },
+  {
+    "testId": "TC-CODE128",
+    "format": "Code 128",
+    "condition": "Normal",
+    "expectedPayload": "TEST-CODE128-BATCH-99",
+    "js": {
+      "detected": true,
+      "decoded": true,
+      "actualFormat": "CODE_128",
+      "actualPayload": "TEST-CODE128-BATCH-99",
+      "payloadCorrect": true,
+      "falsePositive": false,
+      "latencyMs": 5,
+      "status": "PASS",
+      "notes": "Exact byte match (CODE_128)"
+    },
+    "wasm": {
+      "detected": true,
+      "decoded": true,
+      "actualFormat": "Code128",
+      "actualPayload": "TEST-CODE128-BATCH-99",
+      "payloadCorrect": true,
+      "falsePositive": false,
+      "latencyMs": 90,
+      "status": "PASS",
+      "notes": "Exact byte match (Code128)"
+    }
+  },
+  {
+    "testId": "TC-ITF",
+    "format": "ITF",
+    "condition": "Normal",
+    "expectedPayload": "123456789012",
+    "js": {
+      "detected": true,
+      "decoded": true,
+      "actualFormat": "ITF",
+      "actualPayload": "123456789012",
+      "payloadCorrect": true,
+      "falsePositive": false,
+      "latencyMs": 3,
+      "status": "PASS",
+      "notes": "Exact byte match (ITF)"
+    },
+    "wasm": {
+      "detected": true,
+      "decoded": true,
+      "actualFormat": "ITF",
+      "actualPayload": "123456789012",
+      "payloadCorrect": true,
+      "falsePositive": false,
+      "latencyMs": 16,
+      "status": "PASS",
+      "notes": "Exact byte match (ITF)"
+    }
+  },
+  {
+    "testId": "TC-CODABAR",
+    "format": "Codabar",
+    "condition": "Normal",
+    "expectedPayload": "A123456789B",
+    "js": {
+      "detected": false,
+      "decoded": false,
+      "actualFormat": "",
+      "actualPayload": "",
+      "payloadCorrect": false,
+      "falsePositive": false,
+      "latencyMs": 216,
+      "status": "FAIL",
+      "notes": "No MultiFormat Readers were able to detect the code."
+    },
+    "wasm": {
+      "detected": true,
+      "decoded": true,
+      "actualFormat": "Codabar",
+      "actualPayload": "A123456789B",
+      "payloadCorrect": true,
+      "falsePositive": false,
+      "latencyMs": 73,
+      "status": "PASS",
+      "notes": "Exact byte match (Codabar)"
+    }
+  },
+  {
+    "testId": "TC-QR",
+    "format": "QR Code",
+    "condition": "Normal",
+    "expectedPayload": "https://example.com/scanner-poc-test-01",
+    "js": {
+      "detected": true,
+      "decoded": true,
+      "actualFormat": "QR_CODE",
+      "actualPayload": "https://example.com/scanner-poc-test-01",
+      "payloadCorrect": true,
+      "falsePositive": false,
+      "latencyMs": 114,
+      "status": "PASS",
+      "notes": "Exact byte match (QR_CODE)"
+    },
+    "wasm": {
+      "detected": true,
+      "decoded": true,
+      "actualFormat": "QRCode",
+      "actualPayload": "https://example.com/scanner-poc-test-01",
+      "payloadCorrect": true,
+      "falsePositive": false,
+      "latencyMs": 12,
+      "status": "PASS",
+      "notes": "Exact byte match (QRCode)"
+    }
+  },
+  {
+    "testId": "TC-DATAMATRIX",
+    "format": "Data Matrix",
+    "condition": "Normal",
+    "expectedPayload": "SYNTHETIC-DATAMATRIX-ABC-9921",
+    "js": {
+      "detected": true,
+      "decoded": true,
+      "actualFormat": "DATA_MATRIX",
+      "actualPayload": "SYNTHETIC-DATAMATRIX-ABC-9921",
+      "payloadCorrect": true,
+      "falsePositive": false,
+      "latencyMs": 97,
+      "status": "PASS",
+      "notes": "Exact byte match (DATA_MATRIX)"
+    },
+    "wasm": {
+      "detected": true,
+      "decoded": true,
+      "actualFormat": "DataMatrix",
+      "actualPayload": "SYNTHETIC-DATAMATRIX-ABC-9921",
+      "payloadCorrect": true,
+      "falsePositive": false,
+      "latencyMs": 81,
+      "status": "PASS",
+      "notes": "Exact byte match (DataMatrix)"
+    }
+  },
+  {
+    "testId": "TC-AZTEC",
+    "format": "Aztec",
+    "condition": "Normal",
+    "expectedPayload": "AZTEC-SYNTHETIC-TOKEN-4491",
+    "js": {
+      "detected": true,
+      "decoded": true,
+      "actualFormat": "AZTEC",
+      "actualPayload": "AZTEC-SYNTHETIC-TOKEN-4491",
+      "payloadCorrect": true,
+      "falsePositive": false,
+      "latencyMs": 21,
+      "status": "PASS",
+      "notes": "Exact byte match (AZTEC)"
+    },
+    "wasm": {
+      "detected": true,
+      "decoded": true,
+      "actualFormat": "Aztec",
+      "actualPayload": "AZTEC-SYNTHETIC-TOKEN-4491",
+      "payloadCorrect": true,
+      "falsePositive": false,
+      "latencyMs": 4,
+      "status": "PASS",
+      "notes": "Exact byte match (Aztec)"
+    }
+  },
+  {
+    "testId": "TC-PDF417",
+    "format": "PDF417",
+    "condition": "Normal (Synthetic ID)",
+    "expectedPayload": "SYNTH-PDF417-ID:ALICE-M-SMITH:DOB:19900101:EXP:20301231:DOC#8839104",
+    "js": {
+      "detected": true,
+      "decoded": true,
+      "actualFormat": "PDF_417",
+      "actualPayload": "SYNTH-PDF417-ID:ALICE-M-SMITH:DOB:19900101:EXP:20301231:DOC#8839104",
+      "payloadCorrect": true,
+      "falsePositive": false,
+      "latencyMs": 185,
+      "status": "PASS",
+      "notes": "Exact byte match (PDF_417)"
+    },
+    "wasm": {
+      "detected": true,
+      "decoded": true,
+      "actualFormat": "PDF417",
+      "actualPayload": "SYNTH-PDF417-ID:ALICE-M-SMITH:DOB:19900101:EXP:20301231:DOC#8839104",
+      "payloadCorrect": true,
+      "falsePositive": false,
+      "latencyMs": 14,
+      "status": "PASS",
+      "notes": "Exact byte match (PDF417)"
+    }
+  },
+  {
+    "testId": "TC-MICROQR",
+    "format": "Micro QR",
+    "condition": "Normal (Micro QR conditional)",
+    "expectedPayload": "MQR-TEST-771",
+    "js": {
+      "detected": false,
+      "decoded": false,
+      "actualFormat": "",
+      "actualPayload": "",
+      "payloadCorrect": false,
+      "falsePositive": false,
+      "latencyMs": 23,
+      "status": "FAIL",
+      "notes": "No MultiFormat Readers were able to detect the code."
+    },
+    "wasm": {
+      "detected": true,
+      "decoded": true,
+      "actualFormat": "MicroQRCode",
+      "actualPayload": "MQR-TEST-771",
+      "payloadCorrect": true,
+      "falsePositive": false,
+      "latencyMs": 81,
+      "status": "PASS",
+      "notes": "Exact byte match (MicroQRCode)"
+    }
+  },
+  {
+    "testId": "TC-DIFF-ROT90",
+    "format": "Code 128",
+    "condition": "Simulated 90° Vertical Rotation",
+    "expectedPayload": "ROTATED-90-CODE128",
+    "js": {
+      "detected": false,
+      "decoded": false,
+      "actualFormat": "",
+      "actualPayload": "",
+      "payloadCorrect": false,
+      "falsePositive": false,
+      "latencyMs": 106,
+      "status": "FAIL",
+      "notes": "No MultiFormat Readers were able to detect the code."
+    },
+    "wasm": {
+      "detected": true,
+      "decoded": true,
+      "actualFormat": "Code128",
+      "actualPayload": "ROTATED-90-CODE128",
+      "payloadCorrect": true,
+      "falsePositive": false,
+      "latencyMs": 89,
+      "status": "PASS",
+      "notes": "Exact byte match (Code128)"
+    }
+  },
+  {
+    "testId": "TC-DIFF-PDF417-ROT",
+    "format": "PDF417",
+    "condition": "Simulated 90° Rotated PDF417",
+    "expectedPayload": "PDF417-ROTATED-ORIENTATION-TEST",
+    "js": {
+      "detected": false,
+      "decoded": false,
+      "actualFormat": "",
+      "actualPayload": "",
+      "payloadCorrect": false,
+      "falsePositive": false,
+      "latencyMs": 103,
+      "status": "FAIL",
+      "notes": "No MultiFormat Readers were able to detect the code."
+    },
+    "wasm": {
+      "detected": true,
+      "decoded": true,
+      "actualFormat": "PDF417",
+      "actualPayload": "PDF417-ROTATED-ORIENTATION-TEST",
+      "payloadCorrect": true,
+      "falsePositive": false,
+      "latencyMs": 6,
+      "status": "PASS",
+      "notes": "Exact byte match (PDF417)"
+    }
+  },
+  {
+    "testId": "TC-DIFF-INVERT",
+    "format": "QR Code",
+    "condition": "Simulated Inverted / Dark Mode",
+    "expectedPayload": "INVERTED-DARK-MODE-QR",
+    "js": {
+      "detected": false,
+      "decoded": false,
+      "actualFormat": "",
+      "actualPayload": "",
+      "payloadCorrect": false,
+      "falsePositive": false,
+      "latencyMs": 86,
+      "status": "FAIL",
+      "notes": "No MultiFormat Readers were able to detect the code."
+    },
+    "wasm": {
+      "detected": true,
+      "decoded": true,
+      "actualFormat": "QRCode",
+      "actualPayload": "INVERTED-DARK-MODE-QR",
+      "payloadCorrect": true,
+      "falsePositive": false,
+      "latencyMs": 16,
+      "status": "PASS",
+      "notes": "Exact byte match (QRCode)"
+    }
+  },
+  {
+    "testId": "TC-DIFF-LOWRES",
+    "format": "QR Code",
+    "condition": "Simulated Low Resolution (Scale 1)",
+    "expectedPayload": "LOW-RES-QR-TEST",
+    "js": {
+      "detected": true,
+      "decoded": true,
+      "actualFormat": "QR_CODE",
+      "actualPayload": "LOW-RES-QR-TEST",
+      "payloadCorrect": true,
+      "falsePositive": false,
+      "latencyMs": 81,
+      "status": "PASS",
+      "notes": "Exact byte match (QR_CODE)"
+    },
+    "wasm": {
+      "detected": true,
+      "decoded": true,
+      "actualFormat": "QRCode",
+      "actualPayload": "LOW-RES-QR-TEST",
+      "payloadCorrect": true,
+      "falsePositive": false,
+      "latencyMs": 1,
+      "status": "PASS",
+      "notes": "Exact byte match (QRCode)"
+    }
+  },
+  {
+    "testId": "TC-FP-BLANK",
+    "format": "NONE",
+    "condition": "Negative Control - White Blank Canvas",
+    "expectedPayload": "",
+    "js": {
+      "detected": false,
+      "decoded": false,
+      "actualFormat": "",
+      "actualPayload": "",
+      "payloadCorrect": true,
+      "falsePositive": false,
+      "latencyMs": 19,
+      "status": "PASS",
+      "notes": "Correctly rejected negative non-barcode control"
+    },
+    "wasm": {
+      "detected": false,
+      "decoded": false,
+      "actualFormat": "",
+      "actualPayload": "",
+      "payloadCorrect": true,
+      "falsePositive": false,
+      "latencyMs": 70,
+      "status": "PASS",
+      "notes": "Correctly rejected negative non-barcode control"
+    }
+  },
+  {
+    "testId": "TC-FP-NOISE",
+    "format": "NONE",
+    "condition": "Negative Control - High-frequency Random Noise",
+    "expectedPayload": "",
+    "js": {
+      "detected": false,
+      "decoded": false,
+      "actualFormat": "",
+      "actualPayload": "",
+      "payloadCorrect": true,
+      "falsePositive": false,
+      "latencyMs": 90,
+      "status": "PASS",
+      "notes": "Correctly rejected negative non-barcode control"
+    },
+    "wasm": {
+      "detected": false,
+      "decoded": false,
+      "actualFormat": "",
+      "actualPayload": "",
+      "payloadCorrect": true,
+      "falsePositive": false,
+      "latencyMs": 102,
+      "status": "PASS",
+      "notes": "Correctly rejected negative non-barcode control"
+    }
+  },
+  {
+    "testId": "TC-MULTI-2",
+    "format": "MULTIPLE (QR + C128)",
+    "condition": "Multiple Barcodes - QR + Code 128 side-by-side",
+    "expectedPayload": "MULTI-A-QR",
+    "js": {
+      "detected": true,
+      "decoded": true,
+      "actualFormat": "CODE_128",
+      "actualPayload": "MULTI-B-C128",
+      "payloadCorrect": false,
+      "falsePositive": false,
+      "latencyMs": 7,
+      "status": "FAIL",
+      "notes": "Failed to decode any symbol from multi frame"
+    },
+    "wasm": {
+      "detected": true,
+      "decoded": true,
+      "actualFormat": "QRCode",
+      "actualPayload": "MULTI-A-QR",
+      "payloadCorrect": true,
+      "falsePositive": false,
+      "latencyMs": 93,
+      "status": "PASS",
+      "notes": "Simultaneously decoded both symbols: [QRCode:MULTI-A-QR, Code128:MULTI-B-C128]"
+    }
+  }
+]

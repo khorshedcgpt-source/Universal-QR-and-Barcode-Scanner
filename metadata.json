@@ -1,0 +1,8 @@
+{
+  "name": "Universal QR and Barcode Scanner",
+  "description": "Accuracy-first, privacy-focused, offline QR and barcode scanner supporting 1D and 2D formats with camera and image decoding, generator, and local history.",
+  "permissions": [],
+  "capabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
