@@ -223,6 +223,8 @@ export default function App() {
         canvas.width = img.width;
         canvas.height = img.height;
         const ctx = canvas.getContext('2d')!;
+        ctx.fillStyle = '#FFFFFF';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
         ctx.drawImage(img, 0, 0);
         const imgData = ctx.getImageData(0, 0, img.width, img.height);
 

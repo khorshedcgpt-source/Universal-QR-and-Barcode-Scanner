@@ -213,11 +213,18 @@ export class ScannerEngine {
   private decodeImageData(imageData: ImageData): DecodedResult | null {
     if (!this.zxingReader) return null;
 
+    const width = imageData.width;
+    const height = imageData.height;
+    const d = imageData.data;
+    const argb = new Int32Array(width * height);
+    for (let i = 0; i < d.length; i += 4) {
+      argb[i / 4] = (d[i + 3] << 24) | (d[i] << 16) | (d[i + 1] << 8) | d[i + 2];
+    }
     try {
       const luminanceSource = new RGBLuminanceSource(
-        new Uint8ClampedArray(imageData.data.buffer),
-        imageData.width,
-        imageData.height
+        argb,
+        width,
+        height
       );
       const binaryBitmap = new BinaryBitmap(new HybridBinarizer(luminanceSource));
       const result = this.zxingReader.decode(binaryBitmap);

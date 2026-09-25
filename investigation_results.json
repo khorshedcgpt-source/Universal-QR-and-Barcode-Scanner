@@ -1,0 +1,290 @@
+[
+  {
+    "id": "EXP-01-TRANSPARENT-FAIL",
+    "name": "Uncomposited Transparent PNG (Simulate uploaded asset without white fill)",
+    "category": "PREPROCESSING_ISSUE",
+    "expectedFormat": "PDF417",
+    "expectedPayload": "SYNTH-PDF417-ID:ALICE-M-SMITH:DOB:19900101:EXP:20301231:DOC#8839104",
+    "imageDimensions": "471x177",
+    "wasm": {
+      "engine": "ZXing-C++ (WebAssembly)",
+      "pass": false,
+      "decodedPayload": null,
+      "decodedFormat": null,
+      "latency": 201,
+      "error": "No symbology detected"
+    },
+    "js": {
+      "engine": "ZXing (JS Baseline)",
+      "pass": false,
+      "decodedPayload": null,
+      "decodedFormat": null,
+      "latency": 27,
+      "error": "No MultiFormat Readers were able to detect the code."
+    }
+  },
+  {
+    "id": "EXP-02-WHITE-COMPOSITED-FIX",
+    "name": "Corrected Preprocessing: Transparent PNG Composited onto Solid White",
+    "category": "PREPROCESSING_ISSUE",
+    "expectedFormat": "PDF417",
+    "expectedPayload": "SYNTH-PDF417-ID:ALICE-M-SMITH:DOB:19900101:EXP:20301231:DOC#8839104",
+    "imageDimensions": "471x177",
+    "wasm": {
+      "engine": "ZXing-C++ (WebAssembly)",
+      "pass": true,
+      "decodedPayload": "SYNTH-PDF417-ID:ALICE-M-SMITH:DOB:19900101:EXP:20301231:DOC#8839104",
+      "decodedFormat": "PDF417",
+      "latency": 22,
+      "error": null
+    },
+    "js": {
+      "engine": "ZXing (JS Baseline)",
+      "pass": true,
+      "decodedPayload": "SYNTH-PDF417-ID:ALICE-M-SMITH:DOB:19900101:EXP:20301231:DOC#8839104",
+      "decodedFormat": "PDF_417",
+      "latency": 161,
+      "error": null
+    }
+  },
+  {
+    "id": "EXP-03-PDF417-HIGHRES-S3",
+    "name": "Known-Good PDF417 High Resolution (Scale 3, Full Quiet Zone)",
+    "category": "KNOWN_GOOD_SYNTHETIC",
+    "expectedFormat": "PDF417",
+    "expectedPayload": "SYNTH-PDF417-ID:ALICE-M-SMITH:DOB:19900101:EXP:20301231:DOC#8839104",
+    "imageDimensions": "471x177",
+    "wasm": {
+      "engine": "ZXing-C++ (WebAssembly)",
+      "pass": true,
+      "decodedPayload": "SYNTH-PDF417-ID:ALICE-M-SMITH:DOB:19900101:EXP:20301231:DOC#8839104",
+      "decodedFormat": "PDF417",
+      "latency": 5,
+      "error": null
+    },
+    "js": {
+      "engine": "ZXing (JS Baseline)",
+      "pass": true,
+      "decodedPayload": "SYNTH-PDF417-ID:ALICE-M-SMITH:DOB:19900101:EXP:20301231:DOC#8839104",
+      "decodedFormat": "PDF_417",
+      "latency": 42,
+      "error": null
+    }
+  },
+  {
+    "id": "EXP-04-PDF417-MEDRES-S2",
+    "name": "Known-Good PDF417 Medium Resolution (Scale 2, Full Quiet Zone)",
+    "category": "KNOWN_GOOD_SYNTHETIC",
+    "expectedFormat": "PDF417",
+    "expectedPayload": "SYNTH-PDF417-ID:ALICE-M-SMITH:DOB:19900101:EXP:20301231:DOC#8839104",
+    "imageDimensions": "314x118",
+    "wasm": {
+      "engine": "ZXing-C++ (WebAssembly)",
+      "pass": true,
+      "decodedPayload": "SYNTH-PDF417-ID:ALICE-M-SMITH:DOB:19900101:EXP:20301231:DOC#8839104",
+      "decodedFormat": "PDF417",
+      "latency": 2,
+      "error": null
+    },
+    "js": {
+      "engine": "ZXing (JS Baseline)",
+      "pass": true,
+      "decodedPayload": "SYNTH-PDF417-ID:ALICE-M-SMITH:DOB:19900101:EXP:20301231:DOC#8839104",
+      "decodedFormat": "PDF_417",
+      "latency": 27,
+      "error": null
+    }
+  },
+  {
+    "id": "EXP-05-PDF417-DENSE-AAMVA",
+    "name": "Known-Good Dense PDF417 (AAMVA DL / ID Card Standard)",
+    "category": "KNOWN_GOOD_SYNTHETIC",
+    "expectedFormat": "PDF417",
+    "expectedPayload": "ANSI 636026080102DL00410288ZA03290015DLDAQD1234567\nDCSSMITH\nDACJOHN\nDADEDWARD\nDBB19850615\nDBC1\nDAYNONE",
+    "imageDimensions": "522x204",
+    "wasm": {
+      "engine": "ZXing-C++ (WebAssembly)",
+      "pass": true,
+      "decodedPayload": "ANSI 636026080102DL00410288ZA03290015DLDAQD1234567\nDCSSMITH\nDACJOHN\nDADEDWARD\nDBB19850615\nDBC1\nDAYNONE",
+      "decodedFormat": "PDF417",
+      "latency": 6,
+      "error": null
+    },
+    "js": {
+      "engine": "ZXing (JS Baseline)",
+      "pass": true,
+      "decodedPayload": "ANSI 636026080102DL00410288ZA03290015DLDAQD1234567\nDCSSMITH\nDACJOHN\nDADEDWARD\nDBB19850615\nDBC1\nDAYNONE",
+      "decodedFormat": "PDF_417",
+      "latency": 30,
+      "error": null
+    }
+  },
+  {
+    "id": "EXP-06-PDF417-ZERO-QUIET-ZONE",
+    "name": "Zero Quiet Zone PDF417 (Padding 0 - tightly cropped to barcode edge)",
+    "category": "DETECTION_FAILURE",
+    "expectedFormat": "PDF417",
+    "expectedPayload": "SYNTH-PDF417-ID:ALICE-M-SMITH:DOB:19900101:EXP:20301231:DOC#8839104",
+    "imageDimensions": "274x78",
+    "wasm": {
+      "engine": "ZXing-C++ (WebAssembly)",
+      "pass": true,
+      "decodedPayload": "SYNTH-PDF417-ID:ALICE-M-SMITH:DOB:19900101:EXP:20301231:DOC#8839104",
+      "decodedFormat": "PDF417",
+      "latency": 2,
+      "error": null
+    },
+    "js": {
+      "engine": "ZXing (JS Baseline)",
+      "pass": true,
+      "decodedPayload": "SYNTH-PDF417-ID:ALICE-M-SMITH:DOB:19900101:EXP:20301231:DOC#8839104",
+      "decodedFormat": "PDF_417",
+      "latency": 23,
+      "error": null
+    }
+  },
+  {
+    "id": "EXP-07-PDF417-CLIPPED-START-PATTERN",
+    "name": "Physically Clipped PDF417 (Left 6% cropped - Start guard pattern missing)",
+    "category": "INVALID_UNSUPPORTED_FIXTURE",
+    "expectedFormat": "PDF417",
+    "expectedPayload": "SYNTH-PDF417-ID:ALICE-M-SMITH:DOB:19900101:EXP:20301231:DOC#8839104",
+    "imageDimensions": "258x78",
+    "wasm": {
+      "engine": "ZXing-C++ (WebAssembly)",
+      "pass": false,
+      "decodedPayload": null,
+      "decodedFormat": null,
+      "latency": 4,
+      "error": "No symbology detected"
+    },
+    "js": {
+      "engine": "ZXing (JS Baseline)",
+      "pass": true,
+      "decodedPayload": "SYNTH-PDF417-ID:ALICE-M-SMITH:DOB:19900101:EXP:20301231:DOC#8839104",
+      "decodedFormat": "PDF_417",
+      "latency": 20,
+      "error": null
+    }
+  },
+  {
+    "id": "EXP-08-PDF417-CLIPPED-STOP-PATTERN",
+    "name": "Physically Clipped PDF417 (Right 6% cropped - Stop guard pattern missing)",
+    "category": "INVALID_UNSUPPORTED_FIXTURE",
+    "expectedFormat": "PDF417",
+    "expectedPayload": "SYNTH-PDF417-ID:ALICE-M-SMITH:DOB:19900101:EXP:20301231:DOC#8839104",
+    "imageDimensions": "258x78",
+    "wasm": {
+      "engine": "ZXing-C++ (WebAssembly)",
+      "pass": true,
+      "decodedPayload": "SYNTH-PDF417-ID:ALICE-M-SMITH:DOB:19900101:EXP:20301231:DOC#8839104",
+      "decodedFormat": "PDF417",
+      "latency": 2,
+      "error": null
+    },
+    "js": {
+      "engine": "ZXing (JS Baseline)",
+      "pass": true,
+      "decodedPayload": "SYNTH-PDF417-ID:ALICE-M-SMITH:DOB:19900101:EXP:20301231:DOC#8839104",
+      "decodedFormat": "PDF_417",
+      "latency": 30,
+      "error": null
+    }
+  },
+  {
+    "id": "EXP-09-PDF417-ROTATED-90",
+    "name": "90° Vertically Rotated PDF417",
+    "category": "GENUINE_ENGINE_LIMITATION",
+    "expectedFormat": "PDF417",
+    "expectedPayload": "SYNTH-PDF417-ID:ALICE-M-SMITH:DOB:19900101:EXP:20301231:DOC#8839104",
+    "imageDimensions": "118x314",
+    "wasm": {
+      "engine": "ZXing-C++ (WebAssembly)",
+      "pass": true,
+      "decodedPayload": "SYNTH-PDF417-ID:ALICE-M-SMITH:DOB:19900101:EXP:20301231:DOC#8839104",
+      "decodedFormat": "PDF417",
+      "latency": 3,
+      "error": null
+    },
+    "js": {
+      "engine": "ZXing (JS Baseline)",
+      "pass": false,
+      "decodedPayload": null,
+      "decodedFormat": null,
+      "latency": 14,
+      "error": "No MultiFormat Readers were able to detect the code."
+    }
+  },
+  {
+    "id": "EXP-10-PDF417-INVERTED-POLARITY",
+    "name": "Inverted Dark Mode PDF417 (White bars on black)",
+    "category": "GENUINE_ENGINE_LIMITATION",
+    "expectedFormat": "PDF417",
+    "expectedPayload": "SYNTH-PDF417-ID:ALICE-M-SMITH:DOB:19900101:EXP:20301231:DOC#8839104",
+    "imageDimensions": "314x118",
+    "wasm": {
+      "engine": "ZXing-C++ (WebAssembly)",
+      "pass": false,
+      "decodedPayload": null,
+      "decodedFormat": null,
+      "latency": 4,
+      "error": "No symbology detected"
+    },
+    "js": {
+      "engine": "ZXing (JS Baseline)",
+      "pass": false,
+      "decodedPayload": null,
+      "decodedFormat": null,
+      "latency": 23,
+      "error": "No MultiFormat Readers were able to detect the code."
+    }
+  },
+  {
+    "id": "EXP-11-QR-CONTROL",
+    "name": "Known-Good Synthetic QR Code (Sanity Control)",
+    "category": "KNOWN_GOOD_SYNTHETIC",
+    "expectedFormat": "QR Code",
+    "expectedPayload": "https://example.com/scanner-poc-test-01",
+    "imageDimensions": "234x234",
+    "wasm": {
+      "engine": "ZXing-C++ (WebAssembly)",
+      "pass": true,
+      "decodedPayload": "https://example.com/scanner-poc-test-01",
+      "decodedFormat": "QRCode",
+      "latency": 8,
+      "error": null
+    },
+    "js": {
+      "engine": "ZXing (JS Baseline)",
+      "pass": true,
+      "decodedPayload": "https://example.com/scanner-poc-test-01",
+      "decodedFormat": "QR_CODE",
+      "latency": 22,
+      "error": null
+    }
+  },
+  {
+    "id": "EXP-12-BLANK-CONTROL",
+    "name": "Negative Control: Blank White Canvas (Simulates non-barcode photo)",
+    "category": "INVALID_UNSUPPORTED_FIXTURE",
+    "expectedFormat": "NONE",
+    "expectedPayload": "NONE",
+    "imageDimensions": "400x200",
+    "wasm": {
+      "engine": "ZXing-C++ (WebAssembly)",
+      "pass": false,
+      "decodedPayload": null,
+      "decodedFormat": null,
+      "latency": 5,
+      "error": "No symbology detected"
+    },
+    "js": {
+      "engine": "ZXing (JS Baseline)",
+      "pass": false,
+      "decodedPayload": null,
+      "decodedFormat": null,
+      "latency": 16,
+      "error": "No MultiFormat Readers were able to detect the code."
+    }
+  }
+]

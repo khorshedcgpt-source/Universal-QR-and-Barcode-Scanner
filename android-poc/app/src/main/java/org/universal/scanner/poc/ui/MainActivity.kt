@@ -74,6 +74,10 @@ class MainActivity : AppCompatActivity() {
             text = "ZXing-C++"
             setOnClickListener { switchEngine("Candidate B: ZXing-C++") }
         }
+        val btnZxingJava = Button(this).apply {
+            text = "ZXing Java"
+            setOnClickListener { switchEngine("Candidate C: ZXing Java") }
+        }
         val btnTorch = Button(this).apply {
             text = "Torch"
             setOnClickListener { cameraManager.toggleTorch() }
@@ -81,6 +85,7 @@ class MainActivity : AppCompatActivity() {
 
         buttonLayout.addView(btnMlKit)
         buttonLayout.addView(btnZxingCpp)
+        buttonLayout.addView(btnZxingJava)
         buttonLayout.addView(btnTorch)
         rootLayout.addView(buttonLayout)
 

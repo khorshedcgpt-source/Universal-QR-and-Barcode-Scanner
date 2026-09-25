@@ -11,7 +11,7 @@
       "actualPayload": "96385074",
       "payloadCorrect": true,
       "falsePositive": false,
-      "latencyMs": 11,
+      "latencyMs": 7,
       "status": "PASS",
       "notes": "Exact byte match (EAN_8)"
     },
@@ -22,7 +22,7 @@
       "actualPayload": "96385074",
       "payloadCorrect": true,
       "falsePositive": false,
-      "latencyMs": 1296,
+      "latencyMs": 266,
       "status": "PASS",
       "notes": "Exact byte match (EAN8)"
     }
@@ -39,7 +39,7 @@
       "actualPayload": "5901234123457",
       "payloadCorrect": true,
       "falsePositive": false,
-      "latencyMs": 10,
+      "latencyMs": 5,
       "status": "PASS",
       "notes": "Exact byte match (EAN_13)"
     },
@@ -67,7 +67,7 @@
       "actualPayload": "012345678905",
       "payloadCorrect": true,
       "falsePositive": false,
-      "latencyMs": 2,
+      "latencyMs": 1,
       "status": "PASS",
       "notes": "Exact byte match (UPC_A)"
     },
@@ -78,7 +78,7 @@
       "actualPayload": "0012345678905",
       "payloadCorrect": true,
       "falsePositive": false,
-      "latencyMs": 17,
+      "latencyMs": 8,
       "status": "PASS",
       "notes": "Decoded normalized standard EAN13 (\"0012345678905\"); original non-expanded payload available in extra: \"012345678905\""
     }
@@ -95,7 +95,7 @@
       "actualPayload": "",
       "payloadCorrect": false,
       "falsePositive": false,
-      "latencyMs": 215,
+      "latencyMs": 87,
       "status": "FAIL",
       "notes": "No MultiFormat Readers were able to detect the code."
     },
@@ -106,7 +106,7 @@
       "actualPayload": "0012345000065",
       "payloadCorrect": true,
       "falsePositive": false,
-      "latencyMs": 99,
+      "latencyMs": 8,
       "status": "PASS",
       "notes": "Decoded normalized standard UPCE (\"0012345000065\"); original non-expanded payload available in extra: \"01234565\""
     }
@@ -123,7 +123,7 @@
       "actualPayload": "TEST39",
       "payloadCorrect": true,
       "falsePositive": false,
-      "latencyMs": 2,
+      "latencyMs": 1,
       "status": "PASS",
       "notes": "Exact byte match (CODE_39)"
     },
@@ -134,7 +134,7 @@
       "actualPayload": "TEST39",
       "payloadCorrect": true,
       "falsePositive": false,
-      "latencyMs": 91,
+      "latencyMs": 57,
       "status": "PASS",
       "notes": "Exact byte match (Code39)"
     }
@@ -151,7 +151,7 @@
       "actualPayload": "CODE93",
       "payloadCorrect": true,
       "falsePositive": false,
-      "latencyMs": 4,
+      "latencyMs": 1,
       "status": "PASS",
       "notes": "Exact byte match (CODE_93)"
     },
@@ -162,7 +162,7 @@
       "actualPayload": "CODE93",
       "payloadCorrect": true,
       "falsePositive": false,
-      "latencyMs": 74,
+      "latencyMs": 6,
       "status": "PASS",
       "notes": "Exact byte match (Code93)"
     }
@@ -190,7 +190,7 @@
       "actualPayload": "TEST-CODE128-BATCH-99",
       "payloadCorrect": true,
       "falsePositive": false,
-      "latencyMs": 90,
+      "latencyMs": 24,
       "status": "PASS",
       "notes": "Exact byte match (Code128)"
     }
@@ -207,7 +207,7 @@
       "actualPayload": "123456789012",
       "payloadCorrect": true,
       "falsePositive": false,
-      "latencyMs": 3,
+      "latencyMs": 4,
       "status": "PASS",
       "notes": "Exact byte match (ITF)"
     },
@@ -218,7 +218,7 @@
       "actualPayload": "123456789012",
       "payloadCorrect": true,
       "falsePositive": false,
-      "latencyMs": 16,
+      "latencyMs": 8,
       "status": "PASS",
       "notes": "Exact byte match (ITF)"
     }
@@ -235,7 +235,7 @@
       "actualPayload": "",
       "payloadCorrect": false,
       "falsePositive": false,
-      "latencyMs": 216,
+      "latencyMs": 59,
       "status": "FAIL",
       "notes": "No MultiFormat Readers were able to detect the code."
     },
@@ -246,7 +246,7 @@
       "actualPayload": "A123456789B",
       "payloadCorrect": true,
       "falsePositive": false,
-      "latencyMs": 73,
+      "latencyMs": 7,
       "status": "PASS",
       "notes": "Exact byte match (Codabar)"
     }
@@ -263,7 +263,7 @@
       "actualPayload": "https://example.com/scanner-poc-test-01",
       "payloadCorrect": true,
       "falsePositive": false,
-      "latencyMs": 114,
+      "latencyMs": 24,
       "status": "PASS",
       "notes": "Exact byte match (QR_CODE)"
     },
@@ -274,7 +274,7 @@
       "actualPayload": "https://example.com/scanner-poc-test-01",
       "payloadCorrect": true,
       "falsePositive": false,
-      "latencyMs": 12,
+      "latencyMs": 8,
       "status": "PASS",
       "notes": "Exact byte match (QRCode)"
     }
@@ -291,7 +291,7 @@
       "actualPayload": "SYNTHETIC-DATAMATRIX-ABC-9921",
       "payloadCorrect": true,
       "falsePositive": false,
-      "latencyMs": 97,
+      "latencyMs": 19,
       "status": "PASS",
       "notes": "Exact byte match (DATA_MATRIX)"
     },
@@ -302,7 +302,7 @@
       "actualPayload": "SYNTHETIC-DATAMATRIX-ABC-9921",
       "payloadCorrect": true,
       "falsePositive": false,
-      "latencyMs": 81,
+      "latencyMs": 3,
       "status": "PASS",
       "notes": "Exact byte match (DataMatrix)"
     }
@@ -319,7 +319,7 @@
       "actualPayload": "AZTEC-SYNTHETIC-TOKEN-4491",
       "payloadCorrect": true,
       "falsePositive": false,
-      "latencyMs": 21,
+      "latencyMs": 26,
       "status": "PASS",
       "notes": "Exact byte match (AZTEC)"
     },
@@ -347,7 +347,7 @@
       "actualPayload": "SYNTH-PDF417-ID:ALICE-M-SMITH:DOB:19900101:EXP:20301231:DOC#8839104",
       "payloadCorrect": true,
       "falsePositive": false,
-      "latencyMs": 185,
+      "latencyMs": 38,
       "status": "PASS",
       "notes": "Exact byte match (PDF_417)"
     },
@@ -358,7 +358,7 @@
       "actualPayload": "SYNTH-PDF417-ID:ALICE-M-SMITH:DOB:19900101:EXP:20301231:DOC#8839104",
       "payloadCorrect": true,
       "falsePositive": false,
-      "latencyMs": 14,
+      "latencyMs": 9,
       "status": "PASS",
       "notes": "Exact byte match (PDF417)"
     }
@@ -375,7 +375,7 @@
       "actualPayload": "",
       "payloadCorrect": false,
       "falsePositive": false,
-      "latencyMs": 23,
+      "latencyMs": 17,
       "status": "FAIL",
       "notes": "No MultiFormat Readers were able to detect the code."
     },
@@ -386,7 +386,7 @@
       "actualPayload": "MQR-TEST-771",
       "payloadCorrect": true,
       "falsePositive": false,
-      "latencyMs": 81,
+      "latencyMs": 2,
       "status": "PASS",
       "notes": "Exact byte match (MicroQRCode)"
     }
@@ -403,7 +403,7 @@
       "actualPayload": "",
       "payloadCorrect": false,
       "falsePositive": false,
-      "latencyMs": 106,
+      "latencyMs": 22,
       "status": "FAIL",
       "notes": "No MultiFormat Readers were able to detect the code."
     },
@@ -414,7 +414,7 @@
       "actualPayload": "ROTATED-90-CODE128",
       "payloadCorrect": true,
       "falsePositive": false,
-      "latencyMs": 89,
+      "latencyMs": 13,
       "status": "PASS",
       "notes": "Exact byte match (Code128)"
     }
@@ -431,7 +431,7 @@
       "actualPayload": "",
       "payloadCorrect": false,
       "falsePositive": false,
-      "latencyMs": 103,
+      "latencyMs": 17,
       "status": "FAIL",
       "notes": "No MultiFormat Readers were able to detect the code."
     },
@@ -442,7 +442,7 @@
       "actualPayload": "PDF417-ROTATED-ORIENTATION-TEST",
       "payloadCorrect": true,
       "falsePositive": false,
-      "latencyMs": 6,
+      "latencyMs": 4,
       "status": "PASS",
       "notes": "Exact byte match (PDF417)"
     }
@@ -459,7 +459,7 @@
       "actualPayload": "",
       "payloadCorrect": false,
       "falsePositive": false,
-      "latencyMs": 86,
+      "latencyMs": 23,
       "status": "FAIL",
       "notes": "No MultiFormat Readers were able to detect the code."
     },
@@ -487,7 +487,7 @@
       "actualPayload": "LOW-RES-QR-TEST",
       "payloadCorrect": true,
       "falsePositive": false,
-      "latencyMs": 81,
+      "latencyMs": 55,
       "status": "PASS",
       "notes": "Exact byte match (QR_CODE)"
     },
@@ -515,7 +515,7 @@
       "actualPayload": "",
       "payloadCorrect": true,
       "falsePositive": false,
-      "latencyMs": 19,
+      "latencyMs": 16,
       "status": "PASS",
       "notes": "Correctly rejected negative non-barcode control"
     },
@@ -526,7 +526,7 @@
       "actualPayload": "",
       "payloadCorrect": true,
       "falsePositive": false,
-      "latencyMs": 70,
+      "latencyMs": 4,
       "status": "PASS",
       "notes": "Correctly rejected negative non-barcode control"
     }
@@ -543,7 +543,7 @@
       "actualPayload": "",
       "payloadCorrect": true,
       "falsePositive": false,
-      "latencyMs": 90,
+      "latencyMs": 28,
       "status": "PASS",
       "notes": "Correctly rejected negative non-barcode control"
     },
@@ -554,7 +554,7 @@
       "actualPayload": "",
       "payloadCorrect": true,
       "falsePositive": false,
-      "latencyMs": 102,
+      "latencyMs": 17,
       "status": "PASS",
       "notes": "Correctly rejected negative non-barcode control"
     }
@@ -582,7 +582,7 @@
       "actualPayload": "MULTI-A-QR",
       "payloadCorrect": true,
       "falsePositive": false,
-      "latencyMs": 93,
+      "latencyMs": 24,
       "status": "PASS",
       "notes": "Simultaneously decoded both symbols: [QRCode:MULTI-A-QR, Code128:MULTI-B-C128]"
     }
